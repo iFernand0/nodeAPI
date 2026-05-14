@@ -6,7 +6,7 @@ function listarPedidos() {
     lista.innerHTML = "Carregando Pedidos...";
 
     // Faz uma requisição GET para API com a url dela publicada (ou local)
-    fetch(xxxxxxx)
+    fetch("https://nodeapi-qo9g.onrender.com/pedidos")
 
         // Converte a resposta da API para JSON
         .then(res = res.json())
@@ -44,7 +44,7 @@ function cadastrarPedido() {
     const produto = document.getElementById("produto").value;
 
     // Envia uma requisição POST para uma API
-    fetch(xxxxxxx, {
+    fetch("https://nodeapi-qo9g.onrender.com/pedidos", {
       method: "POST",
     
       // Informa que os dados enviados estão no formtato JSON
@@ -81,12 +81,12 @@ function cadastrarPedido() {
 
 function atualizarPedido() {
     // Pega o ID informado e o força a ser um numero
-    const id = number(document.getElementById("idAtualizar").value);
+    const id = Number(document.getElementById("idAtualizar").value);
     // Pega o novo status do pedido digitado no input
     const status = number(document.getElementById("statusAtualizar").value);
 
     // Envia uma requisição PUT para a API
-    fetch(xxxxxxx, {
+    fetch("https://nodeapi-qo9g.onrender.com/pedidos", {
         method: "PUT",
         headers: {
             'Content-Type': 'application/JSON'
@@ -120,9 +120,9 @@ function atualizarPedido() {
 // Funçãoresponsável por cancelar um pedido
 function removerPedido() {
     // Pega o ID digitado
-    const id = number(document.getElementById("idRemover").value);
+    const id = Number(document.getElementById("idRemover").value);
 
-    fetch(xxxxxxx, {
+    fetch("https://nodeapi-qo9g.onrender.com/pedidos", {
         method: "DELETE",
         headers: {
             'Content-Type': 'application/JSON'
