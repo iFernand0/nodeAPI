@@ -9,7 +9,7 @@ function listarPedidos() {
     fetch("https://nodeapi-qo9g.onrender.com/pedidos")
 
         // Converte a resposta da API para JSON
-        .then(res = res.json())
+        .then(res => res.json())
 
         // Trabalhando com o resultado da API
         .then(resultado => {
